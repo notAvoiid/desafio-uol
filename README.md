@@ -1,14 +1,14 @@
 <h1 align="center">
-  Desafio UOL
+  UOL Challenge
 </h1>
 
 <p align="center">
- <img src="https://img.shields.io/static/v1?label=Tipo&message=Desafio&color=8257E5&labelColor=000000" alt="Desafio" />
+ <img src="https://img.shields.io/static/v1?label=Tipo&message=Challenge&color=8257E5&labelColor=000000" alt="Challenge" />
 </p>
 
-API para criar usuarios com codinomes de super-herois aleatorios da Liga da justiça e dos Vingadores. Este desáfio pertence a UOL.
+API to create users with random superhero codenames from the Justice League and the Avengers. This challenge belongs to UOL.
 
-## Tecnologias
+## Technologies
  
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Spring MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html)
@@ -16,42 +16,41 @@ API para criar usuarios com codinomes de super-herois aleatorios da Liga da just
 - [SpringDoc OpenAPI 3](https://springdoc.org/v2/#spring-webflux-support)
 - [H2](https://www.h2database.com/html/main.html)
 
-## Práticas adotadas
+## Methods useds
 
 - SOLID, DRY, YAGNI, KISS
 - API REST
-- Consultas com Spring Data JPA
-- Injeção de Dependências
-- Tratamento de respostas de erro
-- Geração automática do Swagger com a OpenAPI 3
+- Spring Data JPA
+- Dependency injection
+- Handling error responses
+- Automatic Swagger generation with OpenAPI 3
 
-## Como Executar
+## How to execute
 
-- Clonar repositório git
-- Construir o projeto:
+- Clone git repository
+- Build the project:
 ```
 $ ./mvn clean package
 ```
-- Executar a aplicação:
+- Run the application:
 ```
 $ java -jar target/todolist-0.0.1-SNAPSHOT.jar
 ```
 
-A API poderá ser acessada em [localhost:8080](http://localhost:8080).
-O Swagger poderá ser visualizado em [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+The API can be accessed at [localhost:8080](http://localhost:8080).
+Swagger can be viewed at [localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ## API Endpoints
 
-Para fazer as requisições HTTP abaixo, foi utilizada a ferramenta [INSOMNIA](https://insomnia.rest/download):
+To make the HTTP requests below, the tool was used [INSOMNIA](https://insomnia.rest/download):
 
-## API Endpoints
 The API provides the following endpoints:
 
 
 **API PLAYER**
 ```markdown
-POST /api/player - Create a new category
-GET /api/player - Retrieve all categories
+POST /api/player - Create a new player
+GET /api/player - Retrieve all players
 ```
 
 **BODY**
