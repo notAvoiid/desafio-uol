@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,17 +21,18 @@ import java.util.List;
 @Getter
 public class CodenameService {
 
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Autowired
-    private Environment env;
+    private final RestTemplate restTemplate;
+    private final Environment env;
 
     private List<String> avengersCodenameList = new ArrayList<>();
     private List<String> justiceLeagueList = new ArrayList<>();
 
     ObjectMapper objectMapper = new ObjectMapper();
 
+    public CodenameService(RestTemplate restTemplate, Environment env) {
+        this.restTemplate = restTemplate;
+        this.env = env;
+    }
 
     @PostConstruct
     public void loadJsonData(){

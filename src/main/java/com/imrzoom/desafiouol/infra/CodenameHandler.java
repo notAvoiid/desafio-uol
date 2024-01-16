@@ -3,14 +3,16 @@ package com.imrzoom.desafiouol.infra;
 import com.imrzoom.desafiouol.exceptions.NoSuchElementException;
 import com.imrzoom.desafiouol.model.GroupType;
 import com.imrzoom.desafiouol.service.CodenameService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CodenameHandler {
 
-    @Autowired
-    private CodenameService service;
+    private final CodenameService service;
+
+    public CodenameHandler(CodenameService service) {
+        this.service = service;
+    }
 
     public String findCodename(GroupType groupType) {
         if(groupType == GroupType.AVENGERS){
