@@ -21,10 +21,13 @@ public class Player {
 
     private String name;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
     private String phoneNumber;
     private String codename;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private GroupType groupType;
 
     public Player(PlayerRequestDTO dto, String codename){
