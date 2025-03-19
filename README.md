@@ -118,7 +118,7 @@ Você pode testar os endpoints utilizando ferramentas como **Postman** ou **Inso
 ```
 
 **Respostas:**
-- `201 OK`: Player criado com sucesso.
+- `201 CREATED`: Player criado com sucesso.
 - `400 BAD REQUEST`: Caso a lista de heróis (codenames) já tenha sido esgotada.
 
 
