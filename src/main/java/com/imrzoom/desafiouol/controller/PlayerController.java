@@ -1,7 +1,8 @@
 package com.imrzoom.desafiouol.controller;
 
 import com.imrzoom.desafiouol.model.Player;
-import com.imrzoom.desafiouol.model.dto.PlayerDTO;
+import com.imrzoom.desafiouol.model.dto.PlayerRequestDTO;
+import com.imrzoom.desafiouol.model.dto.PlayerResponseDTO;
 import com.imrzoom.desafiouol.service.PlayerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -37,9 +38,8 @@ public class PlayerController {
                     @ApiResponse(description = "Internal Error", responseCode = "500", content = @Content)
 
             })
-    public ResponseEntity<Player> create(@RequestBody @Valid PlayerDTO playerDTO) {
-        Player newPlayer = this.service.createPlayer(playerDTO);
-
+    public ResponseEntity<PlayerResponseDTO> create(@RequestBody @Valid PlayerRequestDTO playerRequestDTO) {
+        var newPlayer = this.service.createPlayer(playerRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(newPlayer);
     }
 
@@ -58,9 +58,8 @@ public class PlayerController {
                     @ApiResponse(description = "Internal Error", responseCode = "500", content = @Content)
 
             })
-    public ResponseEntity<List<Player>> findAll(){
-        List<Player> newPlayers = this.service.findAll();
-
+    public ResponseEntity<List<PlayerResponseDTO>> findAll(){
+        var newPlayers = this.service.findAll();
         return ResponseEntity.ok().body(newPlayers);
     }
 

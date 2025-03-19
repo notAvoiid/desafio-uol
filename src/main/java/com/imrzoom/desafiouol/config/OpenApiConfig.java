@@ -1,4 +1,4 @@
-package com.imrzoom.desafiouol.openapi;
+package com.imrzoom.desafiouol.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -13,7 +13,7 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("Spring Boot with Java 17!")
                         .version("v1")
-                        .description("Todo List!")
+                        .description("Desafio UOL!")
                         .termsOfService("https://github.com/notAvoiid")
                         .license(
                                 new License()
