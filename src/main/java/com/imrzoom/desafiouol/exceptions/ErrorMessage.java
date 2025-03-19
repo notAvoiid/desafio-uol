@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ public class ErrorMessage {
     private int status;
     private String statusText;
     private String message;
+    private Date timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Map<String, String> errors;
@@ -33,6 +35,7 @@ public class ErrorMessage {
         this.status = status.value();
         this.statusText = status.getReasonPhrase();
         this.message = message;
+        this.timestamp = new Date();
     }
 
 
@@ -42,6 +45,7 @@ public class ErrorMessage {
         this.status = status.value();
         this.statusText = status.getReasonPhrase();
         this.message = message;
+        this.timestamp = new Date();
         addErrors(result);
     }
 
@@ -51,6 +55,5 @@ public class ErrorMessage {
             this.errors.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
     }
-
 
 }
